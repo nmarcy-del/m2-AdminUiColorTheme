@@ -1,0 +1,77 @@
+<?php
+/**
+ * Del001_AdminUiColorSwap extension.
+ *
+ * @category   Admin
+ * @package    Del001_AdminUiColorSwap
+ * @author     https://github.com/nmarcy-del
+ * @copyright  Copyright (c) 2022 https://github.com/nmarcy-del
+ */
+/**
+ * @var \Del001\AdminUiColorSwap\Block\Theme $block
+ */
+
+$cssPath = $block->getViewFileUrl($block->getModuleName() . '/css');
+$isEnabled = $block->isUsedPresetTheme() || $block->isUsedCustomTheme();
+$selectedTheme = $block->selectedTheme();
+// Custom theme colors
+$mainColor = $block->escapeHtml($block->getCustomMainColor());
+$secondaryColor = $block->escapeHtml($block->getCustomSecondaryColor());
+$tertiaryColor = $block->escapeHtml($block->getCustomTertiaryColor());
+// Custom theme fonts colors
+$fontMain = $block->escapeHtml($block->getCustomFontMainColor());
+$fontSecondary = $block->escapeHtml($block->getCustomFontSecondaryColor());
+?>
+<script>
+    // check if module is enabled
+    if ('<?= $block->escapeHtml($isEnabled) ?>' === '1') {
+        // Get default filename according to environment or get forced one
+        let cssFilename = ''
+
+        if ('<?= $block->escapeHtml($block->isUsedPresetTheme())?>' === '1') {
+            if ('<?= $block->escapeHtml($selectedTheme) ?>') {
+                cssFilename = '<?= $block->escapeHtml($selectedTheme) ?>'
+            }
+        }
+        if ('<?= $block->escapeHtml($block->isUsedCustomTheme())?>' === '1') {
+            cssFilename = 'custom_admin'
+        }
+        if (cssFilename) {
+            // load css stylesheet according to environment
+            let linkElement = document.createElement('link')
+            linkElement.rel = 'stylesheet';
+            linkElement.type = 'text/css';
+            linkElement.href = '<?= $block->escapeHtml($cssPath) ?>' + '/' + cssFilename + '.css'
+            document.getElementsByTagName('head')[0].appendChild(linkElement);
+        }
+        if (cssFilename === 'custom_admin') {
+           // get the root element
+           let root = document.querySelector(':root');
+
+           let themeMain = '<?= $block->escapeHtml($mainColor) ?>'
+            if (themeMain) {
+                root.style.setProperty('--primarycolor', themeMain);
+            }
+
+            let secondaryColor = '<?= $block->escapeHtml($secondaryColor) ?>'
+            if (secondaryColor) {
+                root.style.setProperty('--secondarycolor', secondaryColor);
+            }
+
+            let tertiaryColor = '<?= $block->escapeHtml($tertiaryColor) ?>'
+            if (tertiaryColor) {
+                root.style.setProperty('--tertiarycolor', tertiaryColor);
+            }
+
+            let fontMain = '<?= $block->escapeHtml($fontMain) ?>'
+            if (fontMain) {
+                root.style.setProperty('--mainfontcolor', fontMain);
+            }
+
+            let fontSecondary = '<?= $block->escapeHtml($fontSecondary) ?>'
+            if (fontSecondary) {
+                root.style.setProperty('--secondaryfontcolor', fontSecondary);
+            }
+        }
+    }
+</script>

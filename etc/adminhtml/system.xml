@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="del001" translate="label" sortOrder="0">
+            <label>Del001</label>
+        </tab>
+        <section id="ui_theme" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>AdminTheme</label>
+            <tab>del001</tab>
+            <resource>Del001_Configuration::ui_theme</resource>
+            <group id="preset_theme" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Preset theme</label>
+                <field id="use_preset_theme" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Use preset theme</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="theme_selection" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Theme selection</label>
+                    <depends>
+                        <field id="use_preset_theme">1</field>
+                    </depends>
+                    <source_model>Del001\AdminUiColorSwap\Model\Config\Source\Theme</source_model>
+                </field>
+            </group>
+            <group id="custom_theme" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Custom theme</label>
+                <field id="use_custom_theme" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Use custom theme</label>
+                    <comment>Takes priority over the preset theme.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="main_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Main color</label>
+                    <depends>
+                        <field id="use_custom_theme">1</field>
+                    </depends>
+                    <frontend_model>Del001\AdminUiColorSwap\Block\ColorPicker</frontend_model>
+                </field>
+                <field id="secondary_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Secondary color</label>
+                    <depends>
+                        <field id="use_custom_theme">1</field>
+                    </depends>
+                    <frontend_model>Del001\AdminUiColorSwap\Block\ColorPicker</frontend_model>
+                </field>
+                <field id="tertiary_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Tertiary color</label>
+                    <depends>
+                        <field id="use_custom_theme">1</field>
+                    </depends>
+                    <frontend_model>Del001\AdminUiColorSwap\Block\ColorPicker</frontend_model>
+                </field>
+                <field id="main_font_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Main font color</label>
+                    <depends>
+                        <field id="use_custom_theme">1</field>
+                    </depends>
+                    <frontend_model>Del001\AdminUiColorSwap\Block\ColorPicker</frontend_model>
+                </field>
+                <field id="secondary_font_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Secondary font color</label>
+                    <depends>
+                        <field id="use_custom_theme">1</field>
+                    </depends>
+                    <frontend_model>Del001\AdminUiColorSwap\Block\ColorPicker</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

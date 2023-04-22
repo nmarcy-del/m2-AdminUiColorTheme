@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="content">
+        <block class="Del001\AdminUiColorSwap\Block\Theme" name="uitheme_theme" template="Del001_AdminUiColorSwap::theme.phtml" />
+    </referenceContainer>
+</page>

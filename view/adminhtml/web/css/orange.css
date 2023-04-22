@@ -1,0 +1,112 @@
+/*button primary*/
+.action-primary,
+.abs-action-primary,
+button.primary,
+.page-actions > button.action-primary,
+.page-actions .page-actions-buttons > button.action-primary,
+.page-actions > button.primary,
+.page-actions .page-actions-buttons > button.primary,
+.block-footer .action-add.primary,
+.page-actions > .block-footer .action-add.action-primary,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary,
+.page-actions > .block-footer .action-add.primary,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary,
+.page-actions-buttons button.ordersuccess-current {
+    background-color: #FF7F3F !important;
+    border-color: #FF7F3F !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+/*button hover, active, focus*/
+.action-primary:hover,
+.action-primary:active,
+.action-primary:focus,
+.abs-action-primary:hover,
+.abs-action-primary:active,
+.abs-action-primary:focus,
+button.primary:hover,
+button.primary:active,
+button.primary:focus,
+.page-actions > button.action-primary:hover,
+.page-actions > button.action-primary:active,
+.page-actions > button.action-primary:focus,
+.page-actions .page-actions-buttons > button.action-primary:hover,
+.page-actions .page-actions-buttons > button.action-primary:active,
+.page-actions .page-actions-buttons > button.action-primary:focus,
+.page-actions > button.primary:hover,
+.page-actions > button.primary:active,
+.page-actions > button.primary:focus,
+.page-actions .page-actions-buttons > button.primary:hover,
+.page-actions .page-actions-buttons > button.primary:active,
+.page-actions .page-actions-buttons > button.primary:focus,
+.block-footer .action-add.primary:hover,
+.block-footer .action-add.primary:active,
+.block-footer .action-add.primary:focus,
+.page-actions > .block-footer .action-add.action-primary:hover,
+.page-actions > .block-footer .action-add.action-primary:active,
+.page-actions > .block-footer .action-add.action-primary:focus,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:hover,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:active,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:focus,
+.page-actions > .block-footer .action-add.primary:hover,
+.page-actions > .block-footer .action-add.primary:active,
+.page-actions > .block-footer .action-add.primary:focus,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:hover,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:active,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:focus{
+    background-color: #EA5C2B !important;
+    border-color: #EA5C2B !important;
+}
+
+/*font primary color*/
+.page-layout-admin-login .admin__legend,
+.dashboard-totals-item:first-child .price,
+.dashboard-item-primary:first-child .dashboard-sales-value{
+    color: #c4ac4c !important;
+}
+
+.menu-wrapper:before,
+.data-grid th,
+.admin__menu [class*='level-']:not(.level-0) a:hover {
+    background-color: #EA5C2B !important;
+}
+
+.admin__menu .level-0>a{
+    color: #fff !important;
+}
+
+.admin__menu .level-0:hover>a,
+.admin__menu .level-0>.submenu,
+.admin__menu .level-0._active>a{
+    background-color: #FF7F3F !important;
+}
+
+.admin__menu .level-0>.submenu{
+    box-shadow: none !important;
+}
+
+.admin__menu .submenu .parent .submenu-group-title{
+    color: #fff !important;
+}
+
+.admin__menu .action-close:before{
+    color: #fff;
+}
+
+.tabs-horiz .ui-state-active .ui-tabs-anchor{
+    border-top: .4rem solid #c4ac4c !important;
+}
+
+.admin__menu .submenu a {
+    color: #fff !important;
+}
+
+.data-grid-th {
+    color: #fff !important;
+}
+
+.menu-wrapper .logo .logo-img{
+    background-color: #fff;
+    width: 50%;
+}
