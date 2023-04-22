@@ -6,6 +6,15 @@
     "license": [
         "proprietary"
     ],
+    "repositories": [
+      {
+          "type": "vcs",
+          "url": "https://github.com/nmarcy-del/m2-AdminUiColorTheme",
+          "options": {
+              "only-tags": true
+          }
+      }
+  ],
     "require": {
         "php": "~7.3.0||~7.4.0||~8.0.0||~8.1.0||~8.2.0",
         "magento/framework": ">=102.0"
