@@ -5,7 +5,7 @@
  * @category   Admin
  * @package    Del001_AdminUiColorSwap
  * @author     https://github.com/nmarcy-del
- * @copyright  Copyright (c) 2022 https://github.com/nmarcy-del
+ * @copyright  Copyright (c) 2023 https://github.com/nmarcy-del
  */
 
 namespace Del001\AdminUiColorSwap\Helper;

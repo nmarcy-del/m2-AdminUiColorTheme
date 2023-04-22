@@ -1,11 +1,12 @@
 <?php
+
 /**
- * SQLi_UiTheme extension.
+ * Del001_AdminUiColorSwap extension.
  *
- * @category   SQLi
- * @package    SQLi_UiTheme
- * @author     SQLi Dev Team
- * @copyright  Copyright (c) SQLI (http://www.sqli.com/)
+ * @category   Admin
+ * @package    Del001_AdminUiColorSwap
+ * @author     https://github.com/nmarcy-del
+ * @copyright  Copyright (c) 2023 https://github.com/nmarcy-del
  */
 
 \Magento\Framework\Component\ComponentRegistrar::register(
