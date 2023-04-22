@@ -8,4 +8,6 @@ You can use pre-selected admin theme (4 color) or choose each color with a color
 Exemple : 
 ![image](https://user-images.githubusercontent.com/77853867/203345264-d0d0a15d-fac5-47c1-a801-fc86e8a6379f.png)
 
-To install copy Del001 folder on app/code on your project.
+To install : 
+
+``` composer require del001/admin-ui-color-swap  ```
