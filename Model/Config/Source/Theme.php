@@ -10,7 +10,9 @@
 
 namespace Del001\AdminUiColorSwap\Model\Config\Source;
 
-class Theme implements \Magento\Framework\Option\ArrayInterface
+use Magento\Framework\Option\ArrayInterface;
+
+class Theme implements ArrayInterface
 {
     /**
      * Options getter

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ui_theme>
+            <preset_theme>
+                <use_preset_theme>0</use_preset_theme>
+            </preset_theme>
+            <custom_theme>
+                <use_custom_theme>1</use_custom_theme>
+                <main_color>#064635</main_color>
+                <secondary_color>#519258</secondary_color>
+                <tertiary_color>#074a38</tertiary_color>
+                <main_font_color>#ffffff</main_font_color>
+                <secondary_font_color>#f7f4f7</secondary_font_color>
+            </custom_theme>
+        </ui_theme>
+    </default>
+</config>
