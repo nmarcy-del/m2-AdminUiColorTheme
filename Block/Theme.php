@@ -13,7 +13,7 @@ namespace Del001\AdminUiColorSwap\Block;
 use Magento\Framework\View\Element\Template;
 use Del001\AdminUiColorSwap\Helper\Data as Helper;
 
-class Theme extends \Magento\Framework\View\Element\Template
+class Theme extends Template
 {
     /**
      * @var Helper
