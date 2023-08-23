@@ -10,9 +10,8 @@
 
 namespace Del001\AdminUiColorSwap\Block\Adminhtml\System\Config\Form\Field;
 
-use Magento\Backend\Block\Template\Context;
-use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class ColorPicker extends Field
 {
@@ -24,41 +23,26 @@ class ColorPicker extends Field
      */
     protected function _getElementHtml(AbstractElement $element)
     {
-      $html = $element->getElementHtml();
-      $value = $element->getData('value');
+        $html = $element->getElementHtml();
+        $value = $element->getData('value');
 
-      $html .= '<script type="text/javascript">
-        require(["jquery", "jquery/colorpicker/js/colorpicker"], function ($) {
-            $(document).ready(function () {
-                let currentElement = $("#' . $element->getHtmlId() . '");
-                let errorMessage = $("<div class=\'color-error\' style=\'color: red; display: none;\'>Invalid color code.</div>");
-                
-                currentElement.after(errorMessage);
-    
-                currentElement.css("backgroundColor", "'. $value .'");
-    
-                currentElement.ColorPicker({
-                    color: "'. $value .'",
-                    onChange: function (hsb, hex, rgb) {
-                        currentElement.css("backgroundColor", "#" + hex).val("#" + hex);
-                    }
-                });
-    
-                currentElement.on("keyup change", function() {
-                    const newColor = $(this).val();
-    
-                    if (!/^#([0-9A-F]{3}){1,2}$/i.test(newColor)) {
-                        errorMessage.show();
-                    } else {
-                        errorMessage.hide();
-                        currentElement.ColorPickerSetColor(newColor);
-                        currentElement.css("backgroundColor", newColor);
-                    }
+        $html .= '<script type="text/javascript">
+            require(["jquery", "jquery/colorpicker/js/colorpicker"], function ($) {
+                $(document).ready(function () {
+                    let $currentElement = $("#' . $element->getHtmlId() . '");
+                    $currentElement.css("backgroundColor", "' . $value . '");
+
+                    require(["jquery/colorpicker/js/colorpicker"], function () {
+                        $currentElement.ColorPicker({
+                            color: "' . $value . '",
+                            onChange: function (hsb, hex, rgb) {
+                                $currentElement.css("backgroundColor", "#" + hex).val("#" + hex);
+                            }
+                        });
+                    });
                 });
             });
-        });
-      </script>';
-
+        </script>';
         return $html;
     }
 }
