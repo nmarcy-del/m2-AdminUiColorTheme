@@ -10,16 +10,16 @@
 
 namespace Del001\AdminUiColorSwap\Model\Config\Source;
 
-use Magento\Framework\Option\ArrayInterface;
+use Magento\Framework\Data\OptionSourceInterface;
 
-class Theme implements ArrayInterface
+class Theme implements OptionSourceInterface
 {
     /**
      * Options getter
      *
      * @return array
      */
-    public function toOptionArray()
+    public function toOptionArray(): array
     {
         return [
             ['value' => 'red', 'label' => __('red')],
@@ -34,7 +34,7 @@ class Theme implements ArrayInterface
      *
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'red' => __('red'),

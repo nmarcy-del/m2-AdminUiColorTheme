@@ -8,10 +8,10 @@
  * @copyright  Copyright (c) 2023 https://github.com/nmarcy-del
  */
 
-namespace Del001\AdminUiColorSwap\Block;
+namespace Del001\AdminUiColorSwap\Block\Adminhtml;
 
-use Magento\Framework\View\Element\Template;
 use Del001\AdminUiColorSwap\Helper\Data as Helper;
+use Magento\Framework\View\Element\Template;
 
 class Theme extends Template
 {

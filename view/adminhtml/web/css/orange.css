@@ -62,7 +62,7 @@ button.primary:focus,
 /*font primary color*/
 .page-layout-admin-login .admin__legend,
 .dashboard-totals-item:first-child .price,
-.dashboard-item-primary:first-child .dashboard-sales-value{
+.dashboard-item-primary:first-child .dashboard-sales-value {
     color: #c4ac4c !important;
 }
 
@@ -72,29 +72,29 @@ button.primary:focus,
     background-color: #EA5C2B !important;
 }
 
-.admin__menu .level-0>a{
+.admin__menu .level-0 > a {
     color: #fff !important;
 }
 
-.admin__menu .level-0:hover>a,
+.admin__menu .level-0:hover > a,
 .admin__menu .level-0>.submenu,
-.admin__menu .level-0._active>a{
+.admin__menu .level-0._active > a {
     background-color: #FF7F3F !important;
 }
 
-.admin__menu .level-0>.submenu{
+.admin__menu .level-0>.submenu {
     box-shadow: none !important;
 }
 
-.admin__menu .submenu .parent .submenu-group-title{
+.admin__menu .submenu .parent .submenu-group-title {
     color: #fff !important;
 }
 
-.admin__menu .action-close:before{
+.admin__menu .action-close:before {
     color: #fff;
 }
 
-.tabs-horiz .ui-state-active .ui-tabs-anchor{
+.tabs-horiz .ui-state-active .ui-tabs-anchor {
     border-top: .4rem solid #c4ac4c !important;
 }
 
@@ -106,7 +106,7 @@ button.primary:focus,
     color: #fff !important;
 }
 
-.menu-wrapper .logo .logo-img{
+.menu-wrapper .logo .logo-img {
     background-color: #fff;
     width: 50%;
 }
