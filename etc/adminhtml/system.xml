@@ -1,4 +1,14 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Del001_AdminUiColorSwap extension.
+ *
+ * @category   Admin
+ * @package    Del001_AdminUiColorSwap
+ * @author     https://github.com/nmarcy-del
+ * @copyright  Copyright (c) 2023 https://github.com/nmarcy-del
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="del001" translate="label" sortOrder="0">
