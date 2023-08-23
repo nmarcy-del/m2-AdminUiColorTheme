@@ -8,35 +8,37 @@
  * @copyright  Copyright (c) 2022 https://github.com/nmarcy-del
  */
 
-use Del001\AdminUiColorSwap\Block\Theme;
+use Del001\AdminUiColorSwap\Block\Adminhtml\Theme;
+use Magento\Framework\Escaper;
 
 /**
  * @var Theme $block
+ * @var Escaper $escaper
  */
 
 $cssPath = $block->getViewFileUrl($block->getModuleName() . '/css');
 $isEnabled = $block->isUsedPresetTheme() || $block->isUsedCustomTheme();
 $selectedTheme = $block->selectedTheme();
 // Custom theme colors
-$mainColor = $block->escapeHtml($block->getCustomMainColor());
-$secondaryColor = $block->escapeHtml($block->getCustomSecondaryColor());
-$tertiaryColor = $block->escapeHtml($block->getCustomTertiaryColor());
+$mainColor = $escaper->escapeHtml($block->getCustomMainColor());
+$secondaryColor = $escaper->escapeHtml($block->getCustomSecondaryColor());
+$tertiaryColor = $escaper->escapeHtml($block->getCustomTertiaryColor());
 // Custom theme fonts colors
-$fontMain = $block->escapeHtml($block->getCustomFontMainColor());
-$fontSecondary = $block->escapeHtml($block->getCustomFontSecondaryColor());
+$fontMain = $escaper->escapeHtml($block->getCustomFontMainColor());
+$fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
 ?>
 <script>
     // check if module is enabled
-    if ('<?= $block->escapeHtml($isEnabled) ?>' === '1') {
+    if ('<?= $escaper->escapeHtml($isEnabled) ?>' === '1') {
         // Get default filename according to environment or get forced one
         let cssFilename = ''
 
-        if ('<?= $block->escapeHtml($block->isUsedPresetTheme())?>' === '1') {
-            if ('<?= $block->escapeHtml($selectedTheme) ?>') {
-                cssFilename = '<?= $block->escapeHtml($selectedTheme) ?>'
+        if ('<?= $escaper->escapeHtml($block->isUsedPresetTheme())?>' === '1') {
+            if ('<?= $escaper->escapeHtml($selectedTheme) ?>') {
+                cssFilename = '<?= $escaper->escapeHtml($selectedTheme) ?>'
             }
         }
-        if ('<?= $block->escapeHtml($block->isUsedCustomTheme())?>' === '1') {
+        if ('<?= $escaper->escapeHtml($block->isUsedCustomTheme())?>' === '1') {
             cssFilename = 'custom_admin'
         }
         if (cssFilename) {
@@ -44,34 +46,34 @@ $fontSecondary = $block->escapeHtml($block->getCustomFontSecondaryColor());
             let linkElement = document.createElement('link')
             linkElement.rel = 'stylesheet';
             linkElement.type = 'text/css';
-            linkElement.href = '<?= $block->escapeHtml($cssPath) ?>' + '/' + cssFilename + '.css'
+            linkElement.href = '<?= $escaper->escapeHtml($cssPath) ?>' + '/' + cssFilename + '.css'
             document.getElementsByTagName('head')[0].appendChild(linkElement);
         }
         if (cssFilename === 'custom_admin') {
            // get the root element
            let root = document.querySelector(':root');
 
-           let themeMain = '<?= $block->escapeHtml($mainColor) ?>'
+           let themeMain = '<?= $escaper->escapeHtml($mainColor) ?>'
             if (themeMain) {
                 root.style.setProperty('--primarycolor', themeMain);
             }
 
-            let secondaryColor = '<?= $block->escapeHtml($secondaryColor) ?>'
+            let secondaryColor = '<?= $escaper->escapeHtml($secondaryColor) ?>'
             if (secondaryColor) {
                 root.style.setProperty('--secondarycolor', secondaryColor);
             }
 
-            let tertiaryColor = '<?= $block->escapeHtml($tertiaryColor) ?>'
+            let tertiaryColor = '<?= $escaper->escapeHtml($tertiaryColor) ?>'
             if (tertiaryColor) {
                 root.style.setProperty('--tertiarycolor', tertiaryColor);
             }
 
-            let fontMain = '<?= $block->escapeHtml($fontMain) ?>'
+            let fontMain = '<?= $escaper->escapeHtml($fontMain) ?>'
             if (fontMain) {
                 root.style.setProperty('--mainfontcolor', fontMain);
             }
 
-            let fontSecondary = '<?= $block->escapeHtml($fontSecondary) ?>'
+            let fontSecondary = '<?= $escaper->escapeHtml($fontSecondary) ?>'
             if (fontSecondary) {
                 root.style.setProperty('--secondaryfontcolor', fontSecondary);
             }

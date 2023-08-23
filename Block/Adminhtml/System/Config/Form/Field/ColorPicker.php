@@ -10,9 +10,8 @@
 
 namespace Del001\AdminUiColorSwap\Block\Adminhtml\System\Config\Form\Field;
 
-use Magento\Backend\Block\Template\Context;
-use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class ColorPicker extends Field
 {

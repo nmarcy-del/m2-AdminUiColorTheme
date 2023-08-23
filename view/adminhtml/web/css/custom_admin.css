@@ -70,7 +70,7 @@ button.primary:focus,
 /*font primary color*/
 .page-layout-admin-login .admin__legend,
 .dashboard-totals-item:first-child .price,
-.dashboard-item-primary:first-child .dashboard-sales-value{
+.dashboard-item-primary:first-child .dashboard-sales-value {
     color: var(--tertiarycolor) !important;
 }
 
@@ -80,25 +80,25 @@ button.primary:focus,
     background-color: var(--primarycolor) !important;
 }
 
-.admin__menu .level-0>a{
+.admin__menu .level-0 > a {
     color: var(--mainfontcolor) !important;
 }
 
-.admin__menu .level-0:hover>a,
+.admin__menu .level-0:hover > a,
 .admin__menu .level-0>.submenu,
-.admin__menu .level-0._active>a{
+.admin__menu .level-0._active > a {
     background-color: var(--secondarycolor) !important;
 }
 
-.admin__menu .level-0>.submenu{
+.admin__menu .level-0>.submenu {
     box-shadow: none !important;
 }
 
-.admin__menu .submenu .parent .submenu-group-title{
+.admin__menu .submenu .parent .submenu-group-title {
     color: var(--mainfontcolor) !important;
 }
 
-.admin__menu .action-close:before{
+.admin__menu .action-close:before {
     color: var(--mainfontcolor);
 }
 
@@ -114,6 +114,6 @@ button.primary:focus,
     color: var(--mainfontcolor) !important;
 }
 
-.tabs-horiz .ui-state-active .ui-tabs-anchor{
+.tabs-horiz .ui-state-active .ui-tabs-anchor {
     border-top: .4rem solid var(--tertiarycolor) !important;
 }
