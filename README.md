@@ -41,10 +41,11 @@ Note :
 - Version 1.0.1 tested on magento 2.4.5 with php 7.4 and php 8.1
 - Version 1.0.2 tested on magento 2.4.6 with php 8.1
 - Version 1.0.3 tested on magento 2.4.6 with php 8.2
+- Version 1.04 tested on magento 2.4.6 with php 8.2 - fix an issue with TFA and apply theme on login pages. -
 
 Upcoming Changes (version 2) :
 
-- Customize admin login page (title, colors)
+- Customize login page regardless of admin theme (title, colors)
 - Change logo (admin interface and admin login page)
 - Customize background color
 
