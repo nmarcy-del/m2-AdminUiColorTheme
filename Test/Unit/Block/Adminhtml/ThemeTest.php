@@ -62,4 +62,9 @@ class ThemeTest extends TestCase
     {
         $this->assertNull($this->theme->getCustomFontSecondaryColor());
     }
+
+    public function testIsCssMinified(): void
+    {
+        $this->assertNull($this->theme->isCssMinified());
+    }
 }
