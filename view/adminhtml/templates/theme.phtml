@@ -28,6 +28,14 @@ $fontMain = $escaper->escapeHtml($block->getCustomFontMainColor());
 $fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
 ?>
 <script>
+    const loadCss = (url) => {
+        let linkElement = document.createElement('link')
+        linkElement.rel = 'stylesheet';
+        linkElement.type = 'text/css';
+        linkElement.href =  url;
+        document.getElementsByTagName('head')[0].appendChild(linkElement);
+    }
+
     // check if module is enabled
     if ('<?= $escaper->escapeHtml($isEnabled) ?>' === '1') {
         // Get default filename according to environment or get forced one
@@ -38,22 +46,34 @@ $fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
                 cssFilename = '<?= $escaper->escapeHtml($selectedTheme) ?>'
             }
         }
+
         if ('<?= $escaper->escapeHtml($block->isUsedCustomTheme())?>' === '1') {
             cssFilename = 'custom_admin'
         }
+
         if (cssFilename) {
             // load css stylesheet according to environment
-            let linkElement = document.createElement('link')
-            linkElement.rel = 'stylesheet';
-            linkElement.type = 'text/css';
-            linkElement.href = '<?= $escaper->escapeHtml($cssPath) ?>' + '/' + cssFilename + '.css'
-            document.getElementsByTagName('head')[0].appendChild(linkElement);
-        }
-        if (cssFilename === 'custom_admin') {
-           // get the root element
-           let root = document.querySelector(':root');
+            let generalUrl = '<?= $escaper->escapeHtml($cssPath) ?>' + '/' + cssFilename;
 
-           let themeMain = '<?= $escaper->escapeHtml($mainColor) ?>'
+            let cssUrl = generalUrl + '.css';
+            let cssMinifiedUrl = generalUrl + '.min.css';
+
+            fetch(cssUrl, { method: 'HEAD' }).then(function(response) {
+                if (response.ok) {
+                    loadCss(cssUrl);
+                } else {
+                    loadCss(cssMinifiedUrl);
+                }
+            }).catch(function(error) {
+                loadCss(cssMinifiedUrl);
+            });
+        }
+
+        if (cssFilename === 'custom_admin') {
+            // get the root element
+            let root = document.querySelector(':root');
+
+            let themeMain = '<?= $escaper->escapeHtml($mainColor) ?>'
             if (themeMain) {
                 root.style.setProperty('--primarycolor', themeMain);
             }
