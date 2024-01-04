@@ -6,7 +6,7 @@
  * @category   Admin
  * @package    Del001_AdminUiColorSwap
  * @author     https://github.com/nmarcy-del
- * @copyright  Copyright (c) 2023 https://github.com/nmarcy-del
+ * @copyright  Copyright (c) 2024 https://github.com/nmarcy-del
  */
 
 \Magento\Framework\Component\ComponentRegistrar::register(
