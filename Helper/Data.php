@@ -28,4 +28,6 @@ class Data
     public const XML_PATH_CUSTOM_THEME_MAIN_FONT_COLOR = 'ui_theme/custom_theme/main_font_color';
     /** @var string custom theme secondary font color */
     public const XML_PATH_CUSTOM_THEME_SECONDARY_FONT_COLOR = 'ui_theme/custom_theme/secondary_font_color';
+    /** @var string minify css */
+    public const XML_PATH_DEV_CSS_MINIFY_FILES = 'dev/css/minify_files';
 }

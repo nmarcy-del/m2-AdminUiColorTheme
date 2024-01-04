@@ -19,6 +19,7 @@ use Magento\Framework\Escaper;
 $cssPath = $block->getViewFileUrl($block->getModuleName() . '/css');
 $isEnabled = $block->isUsedPresetTheme() || $block->isUsedCustomTheme();
 $selectedTheme = $block->selectedTheme();
+$isCssMinified = $block->isCssMinified();
 // Custom theme colors
 $mainColor = $escaper->escapeHtml($block->getCustomMainColor());
 $secondaryColor = $escaper->escapeHtml($block->getCustomSecondaryColor());
@@ -41,6 +42,11 @@ $fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
         if ('<?= $escaper->escapeHtml($block->isUsedCustomTheme())?>' === '1') {
             cssFilename = 'custom_admin'
         }
+
+        if (cssFilename && '<?= $escaper->escapeHtml($isCssMinified) ?>' === '1') {
+            cssFilename += '.min';
+        }
+
         if (cssFilename) {
             // load css stylesheet according to environment
             let linkElement = document.createElement('link')

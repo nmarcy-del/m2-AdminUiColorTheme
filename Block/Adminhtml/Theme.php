@@ -99,4 +99,14 @@ class Theme extends Template
     {
         return $this->_scopeConfig->getValue(Helper::XML_PATH_CUSTOM_THEME_SECONDARY_FONT_COLOR);
     }
+
+    /**
+     * Get is css minified
+     *
+     * @return mixed
+     */
+    public function isCssMinified()
+    {
+        return $this->_scopeConfig->isSetFlag(Helper::XML_PATH_DEV_CSS_MINIFY_FILES);
+    }
 }
