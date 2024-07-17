@@ -41,7 +41,9 @@ Note :
 - Version 1.0.1 tested on magento 2.4.5 with php 7.4 and php 8.1
 - Version 1.0.2 tested on magento 2.4.6 with php 8.1
 - Version 1.0.3 tested on magento 2.4.6 with php 8.2
-- Version 1.04 tested on magento 2.4.6 with php 8.2 - fix an issue with TFA and apply theme on login pages. -
+- Version 1.0.4 tested on magento 2.4.6 with php 8.2 - fix an issue with TFA and apply theme on login pages.
+- Version 1.0.5 tested on magento 2.4.6 with php 8.2 - fix and issue with minifyed css.
+- Version 1.0.6 tested on magento 2.4.7 with php 8.3 - add php 8.3 constraint in composer.json.
 
 Upcoming Changes (version 2) :
 
