@@ -81,6 +81,16 @@ class Theme extends Template
     }
 
     /**
+     * Get custom background color
+     *
+     * @return mixed
+     */
+    public function getCustomBackgroundColor()
+    {
+        return $this->_scopeConfig->getValue(Helper::XML_PATH_CUSTOM_THEME_BACKGROUND_COLOR);
+    }
+
+    /**
      * Get custom font main color
      *
      * @return mixed

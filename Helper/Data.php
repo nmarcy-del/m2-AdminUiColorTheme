@@ -10,6 +10,9 @@
 
 namespace Del001\AdminUiColorSwap\Helper;
 
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Store\Model\ScopeInterface;
+
 class Data
 {
     /** @var string is used preset theme. */
@@ -24,6 +27,8 @@ class Data
     public const XML_PATH_CUSTOM_THEME_SECONDARY_COLOR = 'ui_theme/custom_theme/secondary_color';
     /** @var string custom theme tertiary color */
     public const XML_PATH_CUSTOM_THEME_TERTIARY_COLOR = 'ui_theme/custom_theme/tertiary_color';
+    /** @var string custom background color */
+    public const XML_PATH_CUSTOM_THEME_BACKGROUND_COLOR = 'ui_theme/custom_theme/main_font_color';
     /** @var string custom theme main font color */
     public const XML_PATH_CUSTOM_THEME_MAIN_FONT_COLOR = 'ui_theme/custom_theme/main_font_color';
     /** @var string custom theme secondary font color */

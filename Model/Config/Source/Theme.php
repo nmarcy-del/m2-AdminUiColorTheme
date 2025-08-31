@@ -22,10 +22,17 @@ class Theme implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
+            ['value' => '', 'label' => '----' .__('Normal theme') .'----', 'disabled' => true],
             ['value' => 'red', 'label' => __('red')],
             ['value' => 'blue', 'label' => __('blue')],
             ['value' => 'orange', 'label' =>  __('orange')],
             ['value' => 'green', 'label' =>  __('green')],
+            ['value' => '', 'label' => '----' .__('Dark theme') .'----', 'disabled' => true],
+            ['value' => 'dark', 'label' => __('Dark')],
+            ['value' => 'dark_blue', 'label' => __('Dark blue')],
+            ['value' => 'dark_green', 'label' => __('Dark green')],
+            ['value' => 'dark_orange', 'label' => __('Dark orange')],
+            ['value' => 'dark_red', 'label' => __('Dark red')],
         ];
     }
 
@@ -40,7 +47,12 @@ class Theme implements OptionSourceInterface
             'red' => __('red'),
             'blue' => __('blue'),
             'orange' => __('orange'),
-            'green' => __('green')
+            'green' => __('green'),
+            'dark' => __('Dark'),
+            'dark_blue' => __('Dark blue'),
+            'dark_green' => __('Dark green'),
+            'dark_orange' => __('Dark orange'),
+            'dark_red' => __('Dark red'),
         ];
     }
 }

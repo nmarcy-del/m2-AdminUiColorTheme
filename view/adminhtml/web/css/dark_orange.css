@@ -1,10 +1,10 @@
-:root  {
-    --primarycolor: #ea5c2b;
-    --secondarycolor: #ff7f3f;
-    --tertiarycolor: #c4ac4c;
-    --backgroundcolor: #fff;
-    --mainfontcolor: #f7f3eb;
-    --secondaryfontcolor: #fff;
+:root {
+    --primarycolor: #f59e0b;
+    --secondarycolor: #fdba74;
+    --tertiarycolor: #fb923c;
+    --backgroundcolor: #12100e;
+    --mainfontcolor: #f5efe7;
+    --secondaryfontcolor: #ffffff;
 }
 
 /* body background */

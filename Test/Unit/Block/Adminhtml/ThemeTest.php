@@ -53,6 +53,11 @@ class ThemeTest extends TestCase
         $this->assertNull($this->theme->getCustomTertiaryColor());
     }
 
+    public function testGetBackgroundColor(): void
+    {
+        $this->assertNull($this->theme->getBackgroundColor());
+    }
+
     public function testGetCustomFontMainColor(): void
     {
         $this->assertNull($this->theme->getCustomFontMainColor());

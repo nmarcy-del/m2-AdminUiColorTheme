@@ -1,0 +1,311 @@
+:root {
+    --primarycolor: #ef4444;
+    --secondarycolor: #f87171;
+    --tertiarycolor: #dc2626;
+    --mainbackgroundcolor: green;
+    --secondarybackgroundcolor: darkgreen;
+    --primarybordercolor: blue;
+    --secondarybordercolor: lightblue;
+    --mainfontcolor: #f6ecec;
+    --secondaryfontcolor: #fff;
+    --tertiaryfontcolor: #fff;
+    --linkfontcolor: #fff
+}
+
+/* body background */
+body.adminhtml,
+body.adminhtml-system_config-edit,
+body.page-layout-admin-login,
+body.page-layout-admin-1column,
+body.page-layout-admin-2columns-left,
+body.adminhtml .page-wrapper,
+body.page-layout-admin-login {
+    background-color: var(--mainbackgroundcolor) !important;
+}
+
+body.adminhtml-system_config-edit .page-wrapper,
+body.page-layout-admin-login .page-wrapper,
+body.page-layout-admin-1column .page-wrapper,
+body.page-layout-admin-2columns-left .page-wrapper,
+body.adminhtml .page-wrapper .admin__page-nav,
+body.adminhtml-system_config-edit .page-wrapper .admin__page-nav,
+body.page-layout-admin-login .page-wrapper .admin__page-nav,
+body.page-layout-admin-1column .page-wrapper .admin__page-nav,
+body.page-layout-admin-2columns-left .page-wrapper .admin__page-nav {
+    background-color: var(--mainbackgroundcolor) !important;
+}
+
+body.adminhtml .page-wrapper .page-main-actions,
+body.adminhtml-system_config-edit .page-wrapper .page-main-actions,
+body.page-layout-admin-login .page-wrapper .page-main-actions,
+body.page-layout-admin-1column .page-wrapper .page-main-actions,
+body.page-layout-admin-2columns-left .page-wrapper .page-main-actions {
+    background-color: var(--secondarybackgroundcolor) !important;
+    border-color: var(--secondarybordercolor) !important;
+}
+
+.section-config {
+    border-color: var(--secondarybordercolor) !important;
+}
+
+.admin__page-nav-item.item._active {
+    border: unset !important;
+}
+
+.admin__page-nav-item.item._active .admin__page-nav-link.item-nav {
+    background-color: var(--secondarybackgroundcolor) !important;
+    border: unset !important;
+    border-left: var(--primarycolor) 3px solid !important;
+}
+
+.config-nav-block.admin__page-nav,
+.config-nav-block.admin__page-nav ._collapsed {
+    border: 1px var(--secondarybordercolor) solid !important;
+}
+
+.admin__page-nav-title.title {
+    background-color: var(--mainbackgroundcolor) !important;
+    border: unset !important;
+    border-bottom: 1px var(--secondarybordercolor) solid !important;
+}
+
+.admin__page-nav-item.item:hover {
+    border-color: var(--secondarybordercolor) !important;
+}
+
+.admin__page-nav-item.item._active .admin__page-nav-link.item-nav:hover {
+    border-color: var(--secondarybordercolor) !important;
+}
+
+.admin__page-nav-item:hover .admin__page-nav-link {
+    background-color: var(--mainbackgroundcolor) !important;
+
+}
+
+.admin__page-nav._collapsed._show ._collapsible {
+    background-color: var(--secondarybackgroundcolor) !important;
+}
+
+.admin__page-nav._collapsed ._collapsible,
+.admin__action-dropdown,
+select {
+    background-color: var(--mainbackgroundcolor) !important;
+    border-color: var(--primarybordercolor) !important;
+}
+
+.dashboard-data {
+    background-color: var(--secondarybackgroundcolor) !important;
+}
+
+table {
+    color: var(--secondaryfontcolor) !important;
+}
+
+.dashboard-data th {
+    border-bottom: 1px solid var(--secondarybordercolor) !important;
+}
+
+.admin__table-primary td {
+    border-bottom: 1px solid var(--secondarybordercolor) !important;
+}
+
+.dashboard-item-content .empty-text {
+    background-color: var(--secondarybackgroundcolor) !important;
+}
+
+.dashboard-store-stats .tabs-horiz .ui-state-active,
+.dashboard-store-stats .tabs-horiz .ui-state-default {
+    background-color: var(--secondarybackgroundcolor) !important;
+    border-color: var(--primarybordercolor) !important;
+}
+
+.ui-tabs .tabs-horiz li.ui-state-default {
+    border: var(--secondarybordercolor) 0.1rem solid !important;
+}
+
+.dashboard-store-stats .tabs-horiz .ui-state-active .ui-tabs-anchor {
+    border-bottom: 0.1rem solid var(--secondarybordercolor) !important;
+}
+
+#store-change-button {
+    border: unset !important;
+}
+
+.notifications-action.admin__action-dropdown,
+.admin-user.admin__action-dropdown-wrap .admin__action-dropdown,
+.admin__action-dropdown-wrap .admin__action-dropdown {
+    border: none !important;
+}
+
+.admin__data-grid-actions-wrap .admin__action-dropdown-wrap::after,
+.admin__data-grid-actions-wrap .admin__action-dropdown-wrap::before {
+    border-color: var(--secondarybordercolor) !important;
+}
+
+body.adminhtml footer.page-footer,
+body.adminhtml-system_config-edit footer.page-footer,
+body.page-layout-admin-login footer.page-footer,
+body.page-layout-admin-1column footer.page-footer,
+body.page-layout-admin-2columns-left footer.page-footer {
+    border-color: var(--secondarybordercolor) !important;
+    background-color: var(--secondarybackgroundcolor) !important;
+}
+
+/*button primary*/
+.action-primary,
+.abs-action-primary,
+button.primary,
+.page-actions > button.action-primary,
+.page-actions .page-actions-buttons > button.action-primary,
+.page-actions > button.primary,
+.page-actions .page-actions-buttons > button.primary,
+.block-footer .action-add.primary,
+.page-actions > .block-footer .action-add.action-primary,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary,
+.page-actions > .block-footer .action-add.primary,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary,
+.page-actions-buttons button.ordersuccess-current {
+    background-color: var(--tertiarycolor) !important;
+    border-color: var(--tertiarycolor) !important;
+    color: var(--secondaryfontcolor) !important;
+    text-shadow: none !important;
+    box-shadow: unset !important;
+}
+
+.action.action-advanced-reports {
+    background-color: var(--tertiarycolor) !important;
+    border-color: var(--tertiarycolor) !important;
+    color: var(--secondaryfontcolor) !important;
+    text-shadow: none !important;
+    box-shadow: unset !important;
+}
+
+/*button hover, active, focus*/
+.action-primary:hover,
+.action-primary:active,
+.action-primary:focus,
+.abs-action-primary:hover,
+.abs-action-primary:active,
+.abs-action-primary:focus,
+button.primary:hover,
+button.primary:active,
+button.primary:focus,
+.page-actions > button.action-primary:hover,
+.page-actions > button.action-primary:active,
+.page-actions > button.action-primary:focus,
+.page-actions .page-actions-buttons > button.action-primary:hover,
+.page-actions .page-actions-buttons > button.action-primary:active,
+.page-actions .page-actions-buttons > button.action-primary:focus,
+.page-actions > button.primary:hover,
+.page-actions > button.primary:active,
+.page-actions > button.primary:focus,
+.page-actions .page-actions-buttons > button.primary:hover,
+.page-actions .page-actions-buttons > button.primary:active,
+.page-actions .page-actions-buttons > button.primary:focus,
+.block-footer .action-add.primary:hover,
+.block-footer .action-add.primary:active,
+.block-footer .action-add.primary:focus,
+.page-actions > .block-footer .action-add.action-primary:hover,
+.page-actions > .block-footer .action-add.action-primary:active,
+.page-actions > .block-footer .action-add.action-primary:focus,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:hover,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:active,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:focus,
+.page-actions > .block-footer .action-add.primary:hover,
+.page-actions > .block-footer .action-add.primary:active,
+.page-actions > .block-footer .action-add.primary:focus,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:hover,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:active,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:focus{
+    background-color: var(--primarycolor) !important;
+    border-color: var(--primarycolor) !important;
+}
+
+.action.action-advanced-reports:hover,
+.action.action-advanced-reports:active,
+.action.action-advanced-reports:focus {
+    background-color: var(--primarycolor) !important;
+    border-color: var(--primarycolor) !important;
+    color: var(--secondaryfontcolor) !important;
+    text-shadow: none !important;
+    box-shadow: unset !important;
+}
+
+/*font primary color*/
+.page-layout-admin-login .admin__legend,
+.dashboard-totals-item:first-child .price,
+.dashboard-item-primary:first-child .dashboard-sales-value {
+    color: var(--tertiarycolor) !important;
+}
+
+section.dashboard-advanced-reports {
+    border-color: var(--secondarybordercolor) !important;
+}
+
+.menu-wrapper:before,
+.data-grid th,
+.admin__menu [class*='level-']:not(.level-0) a:hover {
+    background-color: var(--primarycolor) !important;
+}
+
+.admin__menu .level-0 > a {
+    color: var(--mainfontcolor) !important;
+}
+
+.admin__menu .level-0:hover > a,
+.admin__menu .level-0>.submenu,
+.admin__menu .level-0._active > a {
+    background-color: var(--secondarycolor) !important;
+}
+
+.admin__menu .level-0>.submenu {
+    box-shadow: none !important;
+}
+
+.admin__menu .submenu .parent .submenu-group-title {
+    color: var(--mainfontcolor) !important;
+}
+
+.admin__menu .action-close:before {
+    color: var(--mainfontcolor);
+}
+
+.admin__menu .submenu-title {
+    color: var(--mainfontcolor) !important;
+}
+
+.admin__menu .submenu a {
+    color: var(--mainfontcolor) !important;
+}
+
+.data-grid-th {
+    color: var(--mainfontcolor) !important;
+}
+
+button.action-default,
+button.action-select {
+    background-color: var(--secondarybackgroundcolor) !important;
+    border-color: var(--primarybordercolor) !important;
+}
+
+div.selectmenu {
+    background-color: var(--secondarybackgroundcolor) !important;
+    border-color: var(--primarybordercolor) !important;
+}
+
+input {
+    background-color: var(--secondarybackgroundcolor) !important;
+    border-color: var(--primarybordercolor) !important;
+}
+
+.data-grid tr td {
+    background-color: var(--mainbackgroundcolor) !important;
+}
+
+.data-grid tr:hover td {
+    background-color: var(--secondarybackgroundcolor) !important;
+}
+
+.tabs-horiz .ui-state-active .ui-tabs-anchor {
+    border-top: .4rem solid var(--tertiarycolor) !important;
+}

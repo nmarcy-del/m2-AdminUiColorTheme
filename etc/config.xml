@@ -20,6 +20,7 @@
                 <main_color>#064635</main_color>
                 <secondary_color>#519258</secondary_color>
                 <tertiary_color>#074a38</tertiary_color>
+                <background_color>#ffffff</background_color>
                 <main_font_color>#ffffff</main_font_color>
                 <secondary_font_color>#f7f4f7</secondary_font_color>
             </custom_theme>

@@ -1,3 +1,19 @@
+:root  {
+    --primarycolor: #064635;
+    --secondarycolor: #519259;
+    --tertiarycolor: #F0BB62;
+    --backgroundcolor: #fff;
+    --mainfontcolor: #f7f3eb;
+    --secondaryfontcolor: #fff;
+}
+
+/* body background */
+body.adminhtml,
+body#html-body,
+.page-layout-admin-login {
+    background-color: var(--backgroundcolor) !important;
+}
+
 /*button primary*/
 .action-primary,
 .abs-action-primary,
@@ -12,9 +28,9 @@ button.primary,
 .page-actions > .block-footer .action-add.primary,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary,
 .page-actions-buttons button.ordersuccess-current {
-    background-color: #519259 !important;
-    border-color: #519259 !important;
-    color: #fff !important;
+    background-color: var(--tertiarycolor) !important;
+    border-color: var(--tertiarycolor) !important;
+    color: var(--secondaryfontcolor) !important;
     text-shadow: none !important;
 }
 
@@ -55,31 +71,31 @@ button.primary:focus,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:hover,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:active,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:focus{
-    background-color: #064635 !important;
-    border-color: #064635 !important;
+    background-color: var(--primarycolor) !important;
+    border-color: var(--primarycolor) !important;
 }
 
 /*font primary color*/
 .page-layout-admin-login .admin__legend,
 .dashboard-totals-item:first-child .price,
 .dashboard-item-primary:first-child .dashboard-sales-value {
-    color: #F0BB62 !important;
+    color: var(--tertiarycolor) !important;
 }
 
 .menu-wrapper:before,
 .data-grid th,
 .admin__menu [class*='level-']:not(.level-0) a:hover {
-    background-color: #064635 !important;
+    background-color: var(--primarycolor) !important;
 }
 
 .admin__menu .level-0 > a {
-    color: #fff !important;
+    color: var(--mainfontcolor) !important;
 }
 
 .admin__menu .level-0:hover > a,
 .admin__menu .level-0>.submenu,
 .admin__menu .level-0._active > a {
-    background-color: #519259 !important;
+    background-color: var(--secondarycolor) !important;
 }
 
 .admin__menu .level-0>.submenu {
@@ -87,21 +103,25 @@ button.primary:focus,
 }
 
 .admin__menu .submenu .parent .submenu-group-title {
-    color: #fff !important;
+    color: var(--mainfontcolor) !important;
 }
 
-.admin__menu .action-close:before{
-    color: #fff;
+.admin__menu .action-close:before {
+    color: var(--mainfontcolor);
+}
+
+.admin__menu .submenu-title {
+    color: var(--mainfontcolor) !important;
 }
 
 .admin__menu .submenu a {
-    color: #fff !important;
+    color: var(--mainfontcolor) !important;
 }
 
 .data-grid-th {
-    color: #fff !important;
+    color: var(--mainfontcolor) !important;
 }
 
 .tabs-horiz .ui-state-active .ui-tabs-anchor {
-    border-top: .4rem solid #F0BB62 !important;
+    border-top: .4rem solid var(--tertiarycolor) !important;
 }

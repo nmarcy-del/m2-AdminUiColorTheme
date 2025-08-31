@@ -23,6 +23,8 @@ $selectedTheme = $block->selectedTheme();
 $mainColor = $escaper->escapeHtml($block->getCustomMainColor());
 $secondaryColor = $escaper->escapeHtml($block->getCustomSecondaryColor());
 $tertiaryColor = $escaper->escapeHtml($block->getCustomTertiaryColor());
+// Background color
+$backgroundColor = $escaper->escapeHtml($block->getCustomBackgroundColor());
 // Custom theme fonts colors
 $fontMain = $escaper->escapeHtml($block->getCustomFontMainColor());
 $fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
@@ -53,10 +55,10 @@ $fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
 
         if (cssFilename) {
             // load css stylesheet according to environment
-            let generalUrl = '<?= $escaper->escapeHtml($cssPath) ?>' + '/' + cssFilename;
+            const generalUrl = '<?= $escaper->escapeHtml($cssPath) ?>' + '/' + cssFilename;
 
-            let cssUrl = generalUrl + '.css';
-            let cssMinifiedUrl = generalUrl + '.min.css';
+            const cssUrl = generalUrl + '.css';
+            const cssMinifiedUrl = generalUrl + '.min.css';
 
             fetch(cssUrl, { method: 'HEAD' }).then(function(response) {
                 if (response.ok) {
@@ -71,29 +73,40 @@ $fontSecondary = $escaper->escapeHtml($block->getCustomFontSecondaryColor());
 
         if (cssFilename === 'custom_admin') {
             // get the root element
-            let root = document.querySelector(':root');
+            const root = document.querySelector(':root');
 
-            let themeMain = '<?= $escaper->escapeHtml($mainColor) ?>'
+            const themeMain = '<?= $escaper->escapeHtml($mainColor) ?>'
+
             if (themeMain) {
                 root.style.setProperty('--primarycolor', themeMain);
             }
 
-            let secondaryColor = '<?= $escaper->escapeHtml($secondaryColor) ?>'
+            const secondaryColor = '<?= $escaper->escapeHtml($secondaryColor) ?>'
+
             if (secondaryColor) {
                 root.style.setProperty('--secondarycolor', secondaryColor);
             }
 
-            let tertiaryColor = '<?= $escaper->escapeHtml($tertiaryColor) ?>'
+            const tertiaryColor = '<?= $escaper->escapeHtml($tertiaryColor) ?>'
+
             if (tertiaryColor) {
                 root.style.setProperty('--tertiarycolor', tertiaryColor);
             }
 
-            let fontMain = '<?= $escaper->escapeHtml($fontMain) ?>'
+            const backgroundColor = '<?= $escaper->escapeHtml($backgroundColor) ?>'
+
+            if (backgroundColor) {
+                root.style.setProperty('--backgroundcolor', backgroundColor);
+            }
+
+            const fontMain = '<?= $escaper->escapeHtml($fontMain) ?>'
+
             if (fontMain) {
                 root.style.setProperty('--mainfontcolor', fontMain);
             }
 
-            let fontSecondary = '<?= $escaper->escapeHtml($fontSecondary) ?>'
+            const fontSecondary = '<?= $escaper->escapeHtml($fontSecondary) ?>'
+
             if (fontSecondary) {
                 root.style.setProperty('--secondaryfontcolor', fontSecondary);
             }

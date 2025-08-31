@@ -60,6 +60,13 @@
                     </depends>
                     <frontend_model>Del001\AdminUiColorSwap\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
+                <field id="background_color" translate="label" type="text" sortOrder="45" showInDefault="1">
+                    <label>Background color</label>
+                    <depends>
+                        <field id="use_custom_theme">1</field>
+                    </depends>
+                    <frontend_model>Del001\AdminUiColorSwap\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
+                </field>
                 <field id="main_font_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Main font color</label>
                     <depends>
@@ -67,7 +74,7 @@
                     </depends>
                     <frontend_model>Del001\AdminUiColorSwap\Block\Adminhtml\System\Config\Form\Field\ColorPicker</frontend_model>
                 </field>
-                <field id="secondary_font_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="secondary_font_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Secondary font color</label>
                     <depends>
                         <field id="use_custom_theme">1</field>

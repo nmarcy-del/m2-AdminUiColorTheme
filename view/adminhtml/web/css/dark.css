@@ -1,10 +1,10 @@
-:root  {
-    --primarycolor: #ea5c2b;
-    --secondarycolor: #ff7f3f;
-    --tertiarycolor: #c4ac4c;
-    --backgroundcolor: #fff;
-    --mainfontcolor: #f7f3eb;
-    --secondaryfontcolor: #fff;
+:root {
+    --primarycolor: #61afef;
+    --secondarycolor: #c678dd;
+    --tertiarycolor: #98c379;
+    --backgroundcolor: #1e1e1e;
+    --mainfontcolor: #e6e6e6;
+    --secondaryfontcolor: #ffffff;
 }
 
 /* body background */
@@ -124,9 +124,4 @@ button.primary:focus,
 
 .tabs-horiz .ui-state-active .ui-tabs-anchor {
     border-top: .4rem solid var(--tertiarycolor) !important;
-}
-
-.menu-wrapper .logo .logo-img {
-    background-color: var(--backgroundcolor) !important;
-    width: 50%;
 }
