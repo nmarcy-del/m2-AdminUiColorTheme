@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.8] - 2026-11-24
+
+### Fixed
+
+- Restore color picker initialization and color previews when
+  enabling custom themes without reloading the configuration page.
+- Prevent color picker interactions with disabled or read-only fields.
+- Preserve the security and compatibility improvements of version 1.0.7.
+
 ## [1.0.7] - 2026-11-24
 
 Maintenance and compatibility release. Existing V1 features are retained; V2 features are not included.
