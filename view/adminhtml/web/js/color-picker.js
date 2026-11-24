@@ -10,7 +10,7 @@ define([
             pattern = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i,
             error, selectedColor;
 
-        if (!input.length || input.prop('disabled') || input.prop('readOnly')) {
+        if (!input.length) {
             return;
         }
 
@@ -22,7 +22,14 @@ define([
 
         input.ColorPicker({
             color: pattern.test(selectedColor) ? selectedColor : '#ffffff',
+            onShow: function () {
+                return !input.prop('disabled') && !input.prop('readOnly');
+            },
             onChange: function (hsb, hex) {
+                if (input.prop('disabled') || input.prop('readOnly')) {
+                    return;
+                }
+
                 input.val('#' + hex).trigger('change');
             }
         });
