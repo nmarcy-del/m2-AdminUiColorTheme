@@ -3,7 +3,6 @@
 namespace Del001\AdminUiColorSwap\Test\Unit\Model\Config\Source;
 
 use PHPUnit\Framework\TestCase;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use Del001\AdminUiColorSwap\Model\Config\Source\Theme;
 
 class ThemeConfigTest extends TestCase
@@ -12,15 +11,9 @@ class ThemeConfigTest extends TestCase
      * @var object
      */
     protected $theme;
-    /**
-     * @var ObjectManager
-     */
-    protected $objectManager;
-
     protected function setUp(): void
     {
-        $this->objectManager = new ObjectManager($this);
-        $this->theme = $this->objectManager->getObject(Theme::class);
+        $this->theme = new Theme();
     }
 
     public function testToOptionArray(): void

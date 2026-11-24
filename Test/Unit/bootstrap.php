@@ -1,20 +1,24 @@
 <?php
-// @codingStandardsIgnoreFile
-require_once realpath(__DIR__.'/../../vendor/autoload.php');
 
-/**
- * @SuppressWarnings(PHPMD.ShortMethodName)
- */
+$moduleRoot = dirname(__DIR__, 2);
+$magentoRoot = getenv('MAGENTO_ROOT') ?: $moduleRoot;
+require_once $magentoRoot . '/vendor/autoload.php';
+
+spl_autoload_register(static function (string $class) use ($moduleRoot): void {
+    $prefix = 'Del001\\AdminUiColorSwap\\';
+    if (strpos($class, $prefix) !== 0) {
+        return;
+    }
+
+    $file = $moduleRoot . '/' . str_replace('\\', '/', substr($class, strlen($prefix))) . '.php';
+    if (is_file($file)) {
+        require_once $file;
+    }
+});
+
 if (!function_exists('__')) {
-    function __()
+    function __($text, ...$arguments)
     {
-        $argc = func_get_args();
-
-        $text = array_shift($argc);
-        if (!empty($argc) && is_array($argc[0])) {
-            $argc = $argc[0];
-        }
-
-        return new \Magento\Framework\Phrase($text, $argc);
+        return new \Magento\Framework\Phrase($text, $arguments);
     }
 }

@@ -11,14 +11,47 @@
 namespace Del001\AdminUiColorSwap\Block\Adminhtml;
 
 use Del001\AdminUiColorSwap\Helper\Data as Helper;
+use Del001\AdminUiColorSwap\Model\Color;
+use Del001\AdminUiColorSwap\Model\Config\Source\Theme as ThemeSource;
 use Magento\Framework\View\Element\Template;
 
 class Theme extends Template
 {
-    /**
-     * @var Helper
-     */
-    protected $helper;
+    public function getStylesheet(): ?string
+    {
+        if ((string) $this->isUsedCustomTheme() === '1') {
+            return 'custom_admin';
+        }
+
+        $selection = $this->selectedTheme();
+
+        if ((string) $this->isUsedPresetTheme() === '1' && in_array($selection, ThemeSource::PRESETS, true)) {
+            return $selection;
+        }
+
+        return null;
+    }
+
+    public function getCustomCssVariables(): string
+    {
+        $colors = [
+            '--primarycolor' => $this->getCustomMainColor(),
+            '--secondarycolor' => $this->getCustomSecondaryColor(),
+            '--tertiarycolor' => $this->getCustomTertiaryColor(),
+            '--mainfontcolor' => $this->getCustomFontMainColor(),
+            '--secondaryfontcolor' => $this->getCustomFontSecondaryColor(),
+        ];
+        $variables = '';
+
+        foreach ($colors as $property => $value) {
+            $color = Color::normalize($value);
+            if ($color !== '') {
+                $variables .= $property . ':' . $color . ';';
+            }
+        }
+
+        return $variables;
+    }
 
     /**
      * Is preset theme

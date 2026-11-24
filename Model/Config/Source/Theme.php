@@ -14,33 +14,25 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class Theme implements OptionSourceInterface
 {
-    /**
-     * Options getter
-     *
-     * @return array
-     */
+    public const PRESETS = ['red', 'blue', 'orange', 'green'];
+
     public function toOptionArray(): array
     {
-        return [
-            ['value' => 'red', 'label' => __('red')],
-            ['value' => 'blue', 'label' => __('blue')],
-            ['value' => 'orange', 'label' =>  __('orange')],
-            ['value' => 'green', 'label' =>  __('green')],
-        ];
+        $options = [];
+        foreach ($this->toArray() as $value => $label) {
+            $options[] = ['value' => $value, 'label' => $label];
+        }
+
+        return $options;
     }
 
-    /**
-     * Get options in "key-value" format
-     *
-     * @return array
-     */
     public function toArray(): array
     {
-        return [
-            'red' => __('red'),
-            'blue' => __('blue'),
-            'orange' => __('orange'),
-            'green' => __('green')
-        ];
+        $options = [];
+        foreach (self::PRESETS as $preset) {
+            $options[$preset] = __($preset);
+        }
+
+        return $options;
     }
 }
