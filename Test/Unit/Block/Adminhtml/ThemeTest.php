@@ -3,68 +3,66 @@
 namespace Del001\AdminUiColorSwap\Test\Unit\Block\Adminhtml;
 
 use Del001\AdminUiColorSwap\Block\Adminhtml\Theme;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
+use Del001\AdminUiColorSwap\Helper\Data;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionProperty;
 
 class ThemeTest extends TestCase
 {
-    /**
-     * @var object
-     */
-    protected $theme;
-    /**
-     * @var ObjectManager
-     */
-    protected $objectManager;
-
-    public function setUp(): void
+    public function testCustomThemeTakesPriority(): void
     {
-        $this->objectManager = new ObjectManager($this);
-        $this->theme = $this->objectManager->getObject(Theme::class);
+        $theme = $this->theme([
+            Data::XML_PATH_IS_USED_PRESET_THEME => '1',
+            Data::XML_PATH_SELECTED_THEME => 'blue',
+            Data::XML_PATH_IS_CUSTOM_THEME => '1',
+        ]);
+
+        self::assertSame('custom_admin', $theme->getStylesheet());
     }
 
-    public function testIsUsedPresetTheme(): void
+    public function testRendersOnlyKnownPresetAssets(): void
     {
-        $this->assertNull($this->theme->isUsedPresetTheme());
+        foreach (['red', 'blue', 'orange', 'green'] as $preset) {
+            $theme = $this->theme([
+                Data::XML_PATH_IS_USED_PRESET_THEME => '1',
+                Data::XML_PATH_SELECTED_THEME => $preset,
+            ]);
+            self::assertSame($preset, $theme->getStylesheet());
+        }
+
+        self::assertNull($this->theme([
+            Data::XML_PATH_IS_USED_PRESET_THEME => '1',
+            Data::XML_PATH_SELECTED_THEME => '../custom_admin',
+        ])->getStylesheet());
+        self::assertNull($this->theme([
+            Data::XML_PATH_IS_USED_PRESET_THEME => '0',
+            Data::XML_PATH_SELECTED_THEME => 'blue',
+        ])->getStylesheet());
     }
 
-    public function testSelectedTheme(): void
+    public function testOnlyValidColorsAreRenderedFromSavedConfiguration(): void
     {
-        $this->assertNull($this->theme->selectedTheme());
+        $theme = $this->theme([
+            Data::XML_PATH_CUSTOM_THEME_MAIN_COLOR => ' #123 ',
+            Data::XML_PATH_CUSTOM_THEME_SECONDARY_COLOR => '#123; color: red',
+            Data::XML_PATH_CUSTOM_THEME_TERTIARY_COLOR => '#ABCDEF',
+            Data::XML_PATH_CUSTOM_THEME_MAIN_FONT_COLOR => '',
+            Data::XML_PATH_CUSTOM_THEME_SECONDARY_FONT_COLOR => ['#fff'],
+        ]);
+
+        self::assertSame('--primarycolor:#123;--tertiarycolor:#ABCDEF;', $theme->getCustomCssVariables());
     }
 
-    public function testIsUsedCustomTheme(): void
+    private function theme(array $values): Theme
     {
-        $this->assertNull($this->theme->isUsedCustomTheme());
-    }
+        $config = $this->createStub(ScopeConfigInterface::class);
+        $config->method('getValue')->willReturnCallback(static fn ($path) => $values[$path] ?? null);
+        $theme = (new ReflectionClass(Theme::class))->newInstanceWithoutConstructor();
+        $scopeConfig = new ReflectionProperty(Theme::class, '_scopeConfig');
+        $scopeConfig->setValue($theme, $config);
 
-    public function testGetCustomMainColor(): void
-    {
-        $this->assertNull($this->theme->getCustomMainColor());
-    }
-
-    public function testGetCustomSecondaryColor(): void
-    {
-        $this->assertNull($this->theme->getCustomSecondaryColor());
-    }
-
-    public function testGetCustomTertiaryColor(): void
-    {
-        $this->assertNull($this->theme->getCustomTertiaryColor());
-    }
-
-    public function testGetCustomFontMainColor(): void
-    {
-        $this->assertNull($this->theme->getCustomFontMainColor());
-    }
-
-    public function testGetCustomFontSecondaryColor(): void
-    {
-        $this->assertNull($this->theme->getCustomFontSecondaryColor());
-    }
-
-    public function testIsCssMinified(): void
-    {
-        $this->assertNull($this->theme->isCssMinified());
+        return $theme;
     }
 }
